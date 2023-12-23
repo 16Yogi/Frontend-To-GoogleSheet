@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col">
+                <form method="post"
+                    name="contactform"
+                    action="https://script.google.com/macros/s/AKfycbyJ9AJ26hNHhpSqz4NQ25zfBHEks15lS9hTkjf_cNtD0gT8IdwseybGWhoH1p-9Dw5W2g/exec"
+                    id="contactform">
+                    <input type="text" placeholder="name" name="fname" id="name" />
+                    <input type="text" placeholder="mobile" name="mobile" id="phone" />
+                    <input type="text" placeholder="email" name="email" id="email" />
+                    <input type="text" placeholder="message" name="message" id="comment" />
+                    <input type="submit" value="submit" name="submit" id="submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const scriptURL = ''
+    const form = document.forms['formdata']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FsormData(form) })
+            .then(response => alert("Thank you! your form is submitted successfully."))
+            .then(response => window.location.href = 'test.html')
+
+            .then(() => { window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+<!-- deploymen id
+AKfycbyJ9AJ26hNHhpSqz4NQ25zfBHEks15lS9hTkjf_cNtD0gT8IdwseybGWhoH1p-9Dw5W2g
+
+url
+https://script.google.com/macros/s/AKfycbyJ9AJ26hNHhpSqz4NQ25zfBHEks15lS9hTkjf_cNtD0gT8IdwseybGWhoH1p-9Dw5W2g/exec -->
